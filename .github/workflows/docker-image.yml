@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag tex8503/zpl-rest:$(date +%s);docker push tex8503/zpl-rest:$(date +%s)
+      run: docker build . --file Dockerfile --tag tex8503/zpl-rest:main;docker push tex8503/zpl-rest:main
