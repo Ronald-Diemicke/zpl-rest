@@ -1,4 +1,6 @@
 name: Docker Image CI
+env:
+      TOKEN: ${{ secrets.DOCKERHUB }}
 
 on:
   push:
@@ -15,4 +17,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag tex8503/zpl-rest:main;docker push tex8503/zpl-rest:main
+      run: docker build . --file Dockerfile --tag tex8503/zpl-rest:main;docker login -u tex8503 -p ${{TOKEN}};docker push tex8503/zpl-rest:main
